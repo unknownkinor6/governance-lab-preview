@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Website review: page structure and homepage | The Governance Lab</title>
+  <meta name="description" content="Proposed page structure, homepage design (desktop and mobile) and product page layout for The Governance Lab website, for Susana Rodrigues' review.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&amp;family=Mulish:ital,wght@0,400..800;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;display=swap&amp;text=The%20GovernancLabClinicQuty%26PoTCmps%2C">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    .rv-top { background: var(--forest); color: var(--on-dark-2); }
+    .rv-top .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-block: 14px; font-size: .84rem; }
+    .rv-top b { color: var(--sage-300); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .72rem; }
+    .rv-hero { background: var(--sage-50); position: relative; overflow: hidden; isolation: isolate; padding: clamp(48px, 7vw, 96px) 0; }
+    .rv-hero .grid-bg { position: absolute; inset: 0; z-index: -1; mask-image: linear-gradient(100deg, transparent 30%, #000 95%); -webkit-mask-image: linear-gradient(100deg, transparent 30%, #000 95%); }
+    .rv-hero .brand { display: flex; width: fit-content; margin-bottom: 40px; }
+    .rv-hero h1 { font-size: clamp(2.4rem, 1.5rem + 3.6vw, 4.4rem); max-width: 15ch; margin-bottom: 22px; }
+    .rv-meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 30px; font-size: .9rem; color: var(--ink-2); }
+    .rv-meta b { color: var(--ink); }
+    .rv-sec { padding: clamp(56px, 7vw, 104px) 0; border-top: 1px solid var(--line); }
+    .rv-num { font-family: var(--mono); font-size: .8rem; color: var(--green-700); display: block; margin-bottom: 10px; }
+    .rv-sec h2 { margin-bottom: 18px; max-width: 22ch; }
+    .rv-sec > .container > .lede { margin-bottom: 40px; max-width: 62ch; }
+    .ask-grid { display: grid; gap: 16px; }
+    @media (min-width: 900px) { .ask-grid { grid-template-columns: repeat(3, 1fr); } }
+    .ask { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; background: #fff; }
+    .ask h3 { font-size: 1.4rem; margin: 8px 0 8px; }
+    .ask p { color: var(--ink-2); margin: 0; font-size: .97rem; }
+    /* sitemap */
+    .sitemap { display: grid; gap: 14px; }
+    @media (min-width: 760px) { .sitemap { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1150px) { .sitemap { grid-template-columns: repeat(4, 1fr); } }
+    .sm-root { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; background: var(--forest); color: var(--on-dark); border-radius: var(--radius); padding: 18px 22px; }
+    .sm-root strong { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; color: #fff; }
+    .sm-root span { font-size: .88rem; color: var(--on-dark-2); }
+    .sm-page { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; overflow: hidden; break-inside: avoid; }
+    .sm-page header { display: flex; align-items: baseline; gap: 10px; padding: 14px 18px; background: var(--sage-50); border-bottom: 1px solid var(--line); }
+    .sm-page header .mono { color: var(--green-700); }
+    .sm-page header h3 { font-size: 1.25rem; }
+    .sm-page ol { list-style: none; padding: 10px 18px 16px; display: grid; gap: 2px; counter-reset: s; }
+    .sm-page li { font-size: .9rem; color: var(--ink-2); padding: 5px 0 5px 22px; position: relative; border-bottom: 1px dashed var(--line); }
+    .sm-page li:last-child { border-bottom: 0; }
+    .sm-page li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 8px; height: 1.5px; background: var(--sage-400); }
+    .sm-page li.sub { padding-left: 40px; color: var(--ink-3); }
+    .sm-page li.sub::before { left: 20px; width: 10px; }
+    .sm-page.is-home { border-color: var(--green-700); box-shadow: 0 0 0 3px var(--sage-100); }
+    .sm-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: .88rem; color: var(--ink-2); padding: 14px 18px; border: 1px dashed var(--line-strong); border-radius: var(--radius); }
+    /* frames */
+    .browser { border-radius: 14px; overflow: hidden; border: 1px solid var(--line-strong); background: #fff; box-shadow: var(--shadow-2); }
+    .browser .bar { display: flex; align-items: center; gap: 7px; padding: 10px 14px; background: #eef2ec; border-bottom: 1px solid var(--line); }
+    .browser .bar i { width: 10px; height: 10px; border-radius: 50%; background: #cfd8cc; }
+    .browser .bar span { margin-left: 12px; font-size: .74rem; color: var(--ink-3); font-family: var(--mono); }
+    .browser img { width: 100%; }
+    .browser.scroll .shot { max-height: 760px; overflow-y: auto; }
+    .phones { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); align-items: start; }
+    .phone { margin: 0; }
+    .phone .device { border: 10px solid #1f2a24; border-radius: 36px; overflow: hidden; background: #000; box-shadow: var(--shadow-2); }
+    .phone .device img { width: 100%; }
+    .phone .device.scroll { max-height: 640px; overflow-y: auto; }
+    .phone figcaption { margin-top: 12px; font-size: .86rem; color: var(--ink-2); text-align: center; }
+    .anno { list-style: none; display: grid; gap: 0; border-top: 1px solid var(--line-strong); margin-top: 36px; }
+    .anno li { display: grid; grid-template-columns: 40px 1fr; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid var(--line-strong); }
+    @media (min-width: 900px) { .anno li { grid-template-columns: 48px 220px 1fr; } }
+    .anno .mono { color: var(--green-700); padding-top: 3px; }
+    .anno h3 { font-size: 1.2rem; }
+    .anno p { margin: 0; color: var(--ink-2); font-size: .95rem; grid-column: 2; }
+    @media (min-width: 900px) { .anno p { grid-column: 3; } }
+    /* design */
+    .swatches { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .sw { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+    .sw div { height: 86px; }
+    .sw p { margin: 0; padding: 10px 12px; font-size: .82rem; color: var(--ink-2); line-height: 1.4; }
+    .sw b { display: block; color: var(--ink); font-size: .9rem; }
+    .type-row { display: grid; gap: 16px; margin-top: 28px; }
+    @media (min-width: 900px) { .type-row { grid-template-columns: 1.3fr 1fr 1fr; } }
+    .type-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; background: #fff; }
+    .type-card .mono { color: var(--green-700); }
+    .refs { list-style: none; display: grid; gap: 0; border-top: 1px solid var(--line-strong); }
+    .refs li { display: grid; gap: 4px 24px; padding: 18px 0; border-bottom: 1px solid var(--line-strong); }
+    @media (min-width: 900px) { .refs li { grid-template-columns: 280px 1fr; } }
+    .refs h3 { font-size: 1.2rem; }
+    .refs .award { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--green-700); display: block; margin-top: 4px; }
+    .refs p { margin: 0; color: var(--ink-2); font-size: .95rem; }
+    .need-grid { display: grid; gap: 16px; }
+    @media (min-width: 900px) { .need-grid { grid-template-columns: repeat(3, 1fr); } }
+    .need { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; background: #fff; break-inside: avoid; }
+    .need h3 { font-size: 1.35rem; margin: 8px 0 14px; }
+    .need ul { list-style: none; display: grid; gap: 10px; }
+    .need li { display: flex; gap: 10px; font-size: .94rem; color: var(--ink-2); line-height: 1.45; }
+    .need li::before { content: ""; flex: none; width: 14px; height: 14px; margin-top: 4px; border-radius: 4px; border: 1.5px solid var(--sage-400); }
+    .status-table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+    .status-table th, .status-table td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .status-table th { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+    .ok-mark { display: inline-block; padding: 2px 8px; border-radius: 6px; background: var(--sage-100); color: var(--green-800); font-size: .74rem; font-weight: 800; }
+    .rv-foot { background: var(--forest); color: var(--on-dark-2); padding: 40px 0; font-size: .9rem; }
+    .rv-foot a { color: var(--sage-300); }
+    .print-only { display: none; }
+    @media print {
+      @page { size: A3 landscape; margin: 12mm 14mm; }
+      .screen-only, .no-print { display: none !important; }
+      .print-only { display: block; }
+      .print-page { break-before: page; margin: 0; }
+      .print-page img { width: 100%; max-height: 245mm; object-fit: contain; }
+      .rv-hero { padding: 40px 0; }
+      .rv-sec { padding: 8px 0 0; break-before: page; border: 0; }
+      .rv-sec > .container > .lede { margin-bottom: 22px; }
+      .rv-sec h2 { margin-bottom: 10px; }
+      .sm-page, .need, .ask, .sw, .anno li, .refs li, .phone, .type-card, .status-table tr, .tick-list li { break-inside: avoid; }
+      .browser, .phone .device, .sm-page, .need, .ask, .sw { box-shadow: none !important; }
+      .browser img { max-height: 225mm; object-fit: contain; object-position: top; }
+      .phones { grid-template-columns: repeat(3, 1fr); max-width: 70%; }
+      .anno { break-before: page; margin-top: 0; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+<div class="rv-top"><div class="container"><span><b>For review</b>&ensp;The Governance Lab website &middot; page structure and homepage</span><span>Prepared by Sisco Solutions &middot; 9 November 2026</span></div></div>
+
+<main id="main">
+  <section class="rv-hero">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="container">
+      <span class="brand"><img src="../assets/img/mark.svg" alt="" width="56" height="36"><span class="brand-text"><span class="brand-name">The Governance Lab</span><span class="brand-sub">Clinical Quality &amp; PoCT Consultancy</span></span></span>
+      <p class="eyebrow">Website review</p>
+      <h1>Page structure and homepage, <em class="accent">for your approval</em></h1>
+      <p class="lede">As requested, this pack shows the proposed page structure and the homepage design on desktop and mobile, plus a proposed layout for the PoCT Governance Self-Assessment product page. Everything here is a draft: wording, images and details all wait for your approval.</p>
+      <div class="rv-meta"><span><b>For</b> Susana Rodrigues, The Governance Lab</span><span><b>From</b> Sisco Solutions</span><span class="no-print"><b>Draft site</b> <a href="../">open the working draft</a></span></div>
+    </div>
+  </section>
+
+  <section class="rv-sec keep">
+    <div class="container">
+      <span class="rv-num">01</span>
+      <h2>What we would like you to <em class="accent">review</em></h2>
+      <p class="lede">The easiest way to reply is by email, quoting the section numbers in this pack (for example "Home 4: change ...").</p>
+      <div class="ask-grid">
+        <div class="ask"><span class="mono" style="color:var(--green-700)">A</span><h3>Page structure</h3><p>The seven pages in the main navigation and what sits on each one (section 02).</p></div>
+        <div class="ask"><span class="mono" style="color:var(--green-700)">B</span><h3>Homepage design</h3><p>Desktop and mobile layouts, section by section, with the proposed wording (sections 03 and 04).</p></div>
+        <div class="ask"><span class="mono" style="color:var(--green-700)">C</span><h3>Product page layout</h3><p>A proposed layout for the PoCT Governance Self-Assessment, with purchasing switched off (section 06).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rv-sec">
+    <div class="container">
+      <span class="rv-num">02</span>
+      <h2>Proposed page <em class="accent">structure</em></h2>
+      <p class="lede">Seven pages in the main navigation, as in your brief. Clinical governance, quality and patient safety lead; PoCT has its own page as a dedicated specialism. A "Discuss your needs" button is visible on every page.</p>
+      <div class="sitemap">
+        <div class="sm-root"><strong>Main navigation</strong><span>Home &middot; Services &middot; PoCT Consultancy &middot; About &middot; Insights &middot; Resources &middot; Contact &middot; <b style="color:#fff">Discuss your needs</b> button</span></div>
+        <div class="sm-page is-home"><header><span class="mono">01</span><h3>Home</h3></header><ol>
+          <li>Opening: headline, introduction and two buttons</li><li>Problems clients recognise</li><li>Services (five cards)</li><li>What you receive, with document previews</li><li>How I work (five steps)</li><li>PoCT specialism</li><li>Meet Susana</li><li>Next step: discuss your needs</li></ol></div>
+        <div class="sm-page"><header><span class="mono">02</span><h3>Services</h3></header><ol>
+          <li>Clinical governance review</li><li>Clinical audit and improvement support</li><li>Policy and procedure development</li><li>Training and competency frameworks</li><li>Risk and incident learning support</li><li>Ways to start</li><li class="sub">Each service: who it is for, the problem, possible scope, outputs, how to enquire</li></ol></div>
+        <div class="sm-page"><header><span class="mono">03</span><h3>PoCT Consultancy</h3></header><ol>
+          <li>What I can review and support (six areas)</li><li>Ways to engage (three)</li><li>Illustrative PoCT review (your narrative)</li><li>Sample documents</li><li class="sub">Sample findings report preview</li><li class="sub">Sample action plan preview</li></ol></div>
+        <div class="sm-page"><header><span class="mono">04</span><h3>About</h3></header><ol>
+          <li>Photograph and your biography (word for word)</li><li>Approach: independent, practical, proportionate, evidence-based</li><li>Support alongside your team</li><li>Experience</li><li>Qualifications and training</li></ol></div>
+        <div class="sm-page"><header><span class="mono">05</span><h3>Insights</h3></header><ol>
+          <li>Topic filters</li><li>Article cards</li><li class="sub">Article page: author, date, sources, related services</li></ol></div>
+        <div class="sm-page"><header><span class="mono">06</span><h3>Resources</h3></header><ol>
+          <li>Resource cards</li><li class="sub">PoCT Governance Self-Assessment product page</li><li>Sample documents (free to view)</li><li>Tailored support</li></ol></div>
+        <div class="sm-page"><header><span class="mono">07</span><h3>Contact</h3></header><ol>
+          <li>Enquiry form (name, organisation, email, optional telephone, area of interest, message)</li><li>Note: no patient-identifiable information</li><li>Email, LinkedIn and address</li><li>What happens next</li></ol></div>
+        <div class="sm-page"><header><span class="mono">+</span><h3>Footer, every page</h3></header><ol>
+          <li>Company details (to be confirmed)</li><li>Privacy notice</li><li>Website terms</li><li>Patient information reminder</li></ol></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rv-sec">
+    <div class="container">
+      <span class="rv-num">03</span>
+      <h2>Homepage <em class="accent">on desktop</em></h2>
+      <p class="lede">The opening uses your headline and supporting text, with a branded visual built from your tick-and-grid logo and short extracts from the fictional PoCT example, so visitors see the kind of work they would receive straight away.</p>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>thegovernancelab &middot; Home</span></div><img src="img/home-desktop-hero.jpg" alt="Homepage opening on a desktop screen" width="1440" height="900"></div>
+      <ol class="anno" data-pdf-break>
+        <li><span class="mono">Home 1</span><h3>Opening</h3><p>"Clearer governance. Practical improvement. Safer care." with your supporting text, Discuss your needs and Explore services buttons, and three short trust points. Your photograph could replace the visual on the right if you prefer.</p></li>
+        <li><span class="mono">Home 2</span><h3>Problems clients recognise</h3><p>Your five statements as a numbered list. Each one links to the matching service, so visitors who recognise a problem can go straight to the help.</p></li>
+        <li><span class="mono">Home 3</span><h3>Services</h3><p>Five cards: clinical governance reviews, audit and improvement support, policy and competency work, governance resources (marked in development) and a highlighted card for specialist PoCT consultancy.</p></li>
+        <li><span class="mono">Home 4</span><h3>What you receive</h3><p>The five deliverables from your brief beside readable previews of the sample findings report and action plan, each labelled as fictional, with "Open larger version".</p></li>
+        <li><span class="mono">Home 5</span><h3>How I work</h3><p>Your five steps: initial discussion, agreed scope and fee, review, findings and recommendations, optional implementation support.</p></li>
+        <li><span class="mono">Home 6</span><h3>PoCT specialism</h3><p>Your PoCT introduction and the six areas you listed, in the deep green brand colour, linking to the PoCT page and the illustrative review.</p></li>
+        <li><span class="mono">Home 7</span><h3>Meet Susana</h3><p>Your photograph, the opening of your biography, the four principles of your approach and links to About and LinkedIn.</p></li>
+        <li><span class="mono">Home 8</span><h3>Next step</h3><p>"Need a clearer view of where to start? Discuss your needs." with your email as an alternative.</p></li>
+      </ol>
+      <div class="browser scroll screen-only" style="margin-top:40px" data-pdf-skip><div class="bar"><i></i><i></i><i></i><span>Full homepage (scroll)</span></div><div class="shot"><img src="img/home-desktop-full.jpg" alt="The full homepage on a desktop screen" width="1440" height="8085" loading="lazy"></div></div>
+      <figure class="print-only print-page"><figcaption class="small muted" style="margin-bottom:10px">The full homepage on desktop, top to bottom, read left to right.</figcaption><img src="img/home-desktop-columns.jpg" alt="The full homepage on desktop in three columns" width="4440" height="2695"></figure>
+    </div>
+  </section>
+
+  <section class="rv-sec">
+    <div class="container">
+      <span class="rv-num">04</span>
+      <h2>Homepage <em class="accent">on mobile</em></h2>
+      <p class="lede">The same content in one column, with large text and buttons sized for thumbs. The menu opens full screen, the "Discuss your needs" button follows the reader down the page, and tables in the sample documents become easy-to-read cards.</p>
+      <div class="phones">
+        <figure class="phone"><div class="device"><img src="img/home-mobile-hero.jpg" alt="Homepage opening on a phone" width="780" height="1688"></div><figcaption>Opening</figcaption></figure>
+        <figure class="phone"><div class="device"><img src="img/menu-mobile.jpg" alt="Full-screen menu on a phone" width="780" height="1688"></div><figcaption>Menu</figcaption></figure>
+        <figure class="phone"><div class="device"><img src="img/plan-mobile.jpg" alt="Sample action plan on a phone, shown as cards" width="780" height="1688"></div><figcaption>Action plan preview</figcaption></figure>
+        <figure class="phone screen-only"><div class="device scroll"><img src="img/home-mobile-full.jpg" alt="The full homepage on a phone" width="390" height="12207" loading="lazy"></div><figcaption>Full homepage (scroll inside the frame)</figcaption></figure>
+      </div>
+      <figure class="print-only print-page"><figcaption class="small muted" style="margin-bottom:10px">The full homepage on a phone, top to bottom, read left to right.</figcaption><img src="img/home-mobile-columns.jpg" alt="The full homepage on a phone in seven columns" width="2910" height="1744"></figure>
+    </div>
+  </section>
+
+  <section class="rv-sec">
+    <div class="container">
+      <span class="rv-num">05</span>
+      <h2>Design <em class="accent">direction</em></h2>
+      <p class="lede">Your sage and deep green, with white and charcoal, sampled directly from your tick logo. The grid and tick in the logo became the site's visual theme: the grid for evidence and method, the tick for assurance. No stock photographs are used yet; the document previews do that work.</p>
+      <div class="swatches">
+        <div class="sw"><div style="background:#446251"></div><p><b>Deep green</b>#446251, from your logo</p></div>
+        <div class="sw"><div style="background:#a8c4a2"></div><p><b>Sage</b>#a8c4a2, from your logo</p></div>
+        <div class="sw"><div style="background:#1f3329"></div><p><b>Forest</b>#1f3329, dark sections</p></div>
+        <div class="sw"><div style="background:#f3f7f1;border-bottom:1px solid var(--line)"></div><p><b>Sage tint</b>#f3f7f1, light sections</p></div>
+        <div class="sw"><div style="background:#ffffff;border-bottom:1px solid var(--line)"></div><p><b>White</b>#ffffff</p></div>
+        <div class="sw"><div style="background:#2b3135"></div><p><b>Charcoal</b>#2b3135, text</p></div>
+      </div>
+      <div class="type-row">
+        <div class="type-card"><span class="mono">Headings: Newsreader</span><p style="font-family:var(--serif);font-size:2.2rem;line-height:1.1;margin:12px 0 0">Clearer governance. <em class="accent">Safer care.</em></p></div>
+        <div class="type-card"><span class="mono">Text: Mulish</span><p style="margin:12px 0 0;color:var(--ink-2)">Close to the lettering in your logo and very readable on small screens.</p></div>
+        <div class="type-card"><span class="mono">Labels: IBM Plex Mono</span><p style="margin:12px 0 0;font-family:var(--mono);color:var(--green-700)">F01 &middot; Day 0 &middot; Day 30</p></div>
+      </div>
+      <h3 style="font-size:var(--step-2);margin:56px 0 18px" data-pdf-break>Inspiration from Awwwards</h3>
+      <ul class="refs">
+        <li><div><h3>Function Health</h3><span class="award">Honourable Mention</span></div><p>Serif headings with an italic accent phrase, and a membership card with a ticked list of what is included. Used for your headline style and the product page purchase card.</p></li>
+        <li><div><h3>Oregon Health Leadership Council</h3><span class="award">Nominee</span></div><p>A healthcare leadership organisation in deep teal and sage, with ruled lists and labelled article cards. Used for the problem list and Insights cards.</p></li>
+        <li><div><h3>Outsource Consultants Inc.</h3><span class="award">Site of the Day</span></div><p>A consultancy site with visible grid lines, numbered sections and an expanding services list. Used for the numbered steps and the grid theme, which also echoes your logo.</p></li>
+        <li><div><h3>Heva Health</h3><span class="award">Site of the Day</span></div><p>A calm sage and olive palette with rounded buttons. Used for the button style and overall tone.</p></li>
+        <li><div><h3>Institute of Health</h3><span class="award">Honourable Mention</span></div><p>A large wordmark across the footer. Used for "The Governance Lab" at the foot of every page.</p></li>
+      </ul>
+      <p class="small muted" style="margin-top:18px">You mentioned sending two or three websites you like; if you do, we will adjust the direction to match.</p>
+    </div>
+  </section>
+
+  <section class="rv-sec">
+    <div class="container">
+      <span class="rv-num">06</span>
+      <h2>Resources: proposed <em class="accent">product page</em></h2>
+      <p class="lede">A layout for the PoCT Governance Self-Assessment, covering everything your brief lists for a product page. Purchasing is switched off and every detail you have not confirmed is marked "to be confirmed". The wording is a placeholder for your approval.</p>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>Resources &middot; PoCT Governance Self-Assessment</span></div><img src="img/product-desktop.jpg" alt="Proposed product page layout" width="1440" height="1000"></div>
+      <table class="status-table" style="margin-top:32px" data-pdf-break>
+        <thead><tr><th scope="col">Your brief asks for</th><th scope="col">On the proposed page</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Name, purpose and audience</td><td>Title, short description, "Who it is for"</td><td><span class="tbc-mark">Wording to approve</span></td></tr>
+          <tr><td>What is included, with sample pages</td><td>Four preview pages (cover, contents, section page, action summary) and a contents list</td><td><span class="tbc-mark">Needs the final assessment</span></td></tr>
+          <tr><td>Format, editability, software, version or review date</td><td>Details list in the purchase card</td><td><span class="tbc-mark">To be confirmed</span></td></tr>
+          <tr><td>Price and tax information</td><td>Price block</td><td><span class="tbc-mark">To be confirmed</span></td></tr>
+          <tr><td>Licence scope and organisational limits</td><td>"Before you buy" section</td><td><span class="tbc-mark">To be confirmed</span></td></tr>
+          <tr><td>Delivery, support and limitations</td><td>"How it works" steps, help email, limitations</td><td><span class="ok-mark">Drafted</span></td></tr>
+          <tr><td>Purchase button and enquiry option</td><td>Purchase button (switched off), Register interest, tailored support link</td><td><span class="ok-mark">In place, purchasing off</span></td></tr>
+        </tbody>
+      </table>
+      <p class="note" style="margin-top:24px">The self-assessment overview you mentioned was not attached to your email, so the previews use your six PoCT areas as a proposed structure. Once we have it, the previews and contents will match the real assessment.</p>
+    </div>
+  </section>
+
+  <section class="rv-sec">
+    <div class="container">
+      <span class="rv-num">07</span>
+      <h2>How the fictional examples <em class="accent">are used</em></h2>
+      <p class="lede">Following your instructions in the examples document:</p>
+      <ul class="tick-list" style="max-width:820px">
+        <li><svg class="tick-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Your full label, "Illustrative example using fictional information. This is not a client case study and does not represent completed work or achieved outcomes.", is on every preview and every page that shows them.</li>
+        <li><svg class="tick-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Findings report preview: the review scope and one complete finding (F01) on one readable page, with "Open larger version".</li>
+        <li><svg class="tick-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Action plan preview: the matching plan showing actions, proposed owners, targets and completion evidence, readable on a phone.</li>
+        <li><svg class="tick-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Your project narrative is used word for word on the PoCT page under "Illustrative PoCT review".</li>
+        <li><svg class="tick-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>The full four-page sample is laid out ready to become a download, but is not linked from the site until you approve it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="rv-sec">
+    <div class="container">
+      <span class="rv-num">08</span>
+      <h2>What we need <em class="accent">from you</em></h2>
+      <p class="lede">Grouped the same way as your content checklist. Anything not yet confirmed stays a placeholder in the draft.</p>
+      <div class="need-grid">
+        <div class="need"><span class="tag">Start</span><h3>To finish the design</h3><ul>
+          <li>Your logo as SVG and a high-resolution transparent PNG (the draft uses a redrawn copy of your tick logo)</li>
+          <li>The original, high-resolution professional photograph</li>
+          <li>The PoCT Governance Self-Assessment overview (it was not attached)</li>
+          <li>Two or three websites you like, if you would like to share them</li>
+        </ul></div>
+        <div class="need"><span class="tag">Launch</span><h3>Before the site goes live</h3><ul>
+          <li>Confirm the experience and qualifications taken from LinkedIn, and whether to name past employers</li>
+          <li>Whether to add your NMC registration</li>
+          <li>Geographical coverage, and remote or on-site availability</li>
+          <li>Whether to publish a telephone number</li>
+          <li>Registered company name, number, registered office and any VAT details</li>
+          <li>Privacy notice and website terms wording</li>
+          <li>Your first Insights articles</li>
+          <li>Analytics: none, or a privacy-friendly option</li>
+        </ul></div>
+        <div class="need"><span class="tag">Decide</span><h3>A few choices</h3><ul>
+          <li>Show the Resources page at launch, or hide it until the self-assessment is ready</li>
+          <li>Keep the branded visual in the homepage opening, or use your photograph there</li>
+          <li>A medication safety topic for Insights</li>
+          <li>Any changes to the draft wording on the Services, PoCT and About pages</li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rv-foot"><div class="container">Prepared by Sisco Solutions for Susana Rodrigues, The Governance Lab. All wording, images and details are drafts for approval.</div></footer>
+</body>
+</html>

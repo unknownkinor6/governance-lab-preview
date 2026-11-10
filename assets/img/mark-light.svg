@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 40 820 530" role="img" aria-label="The Governance Lab mark">
+  <defs>
+    <linearGradient id="tglShortL" x1="80" y1="352" x2="330" y2="540" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7f9f86"/>
+      <stop offset="1" stop-color="#a9c6a2"/>
+    </linearGradient>
+    <linearGradient id="tglLongL" x1="330" y1="560" x2="800" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6f8f78"/>
+      <stop offset="0.55" stop-color="#7d9c82"/>
+      <stop offset="1" stop-color="#adcaa5"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#a8c4a2" stroke-opacity="0.32" stroke-width="7" stroke-linecap="square" fill="none">
+    <path d="M275 175V330M340 130V420M408 115V300M475 115V560M540 160V540M605 345V490"/>
+    <path d="M275 175H545M218 237H500M195 300H665M318 365H665M408 428H655M475 490H605"/>
+  </g>
+  <path fill="url(#tglShortL)" d="M78 352H244Q258 352 268 361L362 446L292 550Z"/>
+  <path fill="url(#tglLongL)" d="M280 550H420Q600 292 860 62H690Q468 268 280 550Z"/>
+</svg>
