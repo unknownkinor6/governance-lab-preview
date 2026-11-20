@@ -7,11 +7,11 @@
   <!-- Review draft: keep search engines out until Susana approves the site. Remove at launch. -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#1f3329">
-  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&amp;family=Mulish:ital,wght@0,400..800;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&amp;display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;display=swap&amp;text=The%20GovernancLabClinicQuty%26PoTCmps%2C">
+  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <!-- Fonts are hosted on this site (assets/fonts), so no visitor data goes to Google. -->
+  <link rel="preload" href="../../assets/fonts/Mulish-normal-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/Newsreader-normal-300-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/site.css">
   <script>document.documentElement.className += ' js';</script>
   <script src="../../assets/js/site.js" defer></script>
@@ -29,8 +29,7 @@
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="brand" href="../../" aria-label="The Governance Lab, home">
-      <img src="../../assets/img/mark.svg" alt="" width="56" height="36">
-      <span class="brand-text"><span class="brand-name">The Governance Lab</span><span class="brand-sub">Clinical Quality &amp; PoCT Consultancy</span></span>
+      <img class="brand-logo" src="../../assets/img/logo-dark.png" alt="" width="1000" height="231">
     </a>
     <nav class="main-nav" aria-label="Main">
       <ul>
@@ -75,7 +74,7 @@
         <h1 style="font-size:clamp(2.2rem,1.5rem + 2.8vw,3.8rem)">Article title, written by <em class="accent">Susana</em></h1>
         <p class="lede" style="margin-top:20px">A one or two sentence summary that tells the reader what the article covers and who it is for.</p>
         <div class="article-meta">
-          <span class="avatar" aria-hidden="true">SR</span>
+          <img class="avatar-photo" src="../../assets/img/susana-rodrigues.jpg" alt="" width="480" height="640">
           <span><b>Susana Rodrigues</b>, Registered Nurse &middot; Founder, The Governance Lab</span>
           <span>Publication date</span>
           <span>Reading time</span>
@@ -105,7 +104,7 @@
           <p class="eyebrow">Related</p>
           <div class="related">
             <a class="card" href="../../poct-consultancy/"><h3 style="font-size:1.3rem">PoCT consultancy</h3><p>Focused reviews, gap analysis and implementation support.</p><span class="card-foot">View <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-            <a class="card" href="../../resources/poct-governance-self-assessment/"><h3 style="font-size:1.3rem">PoCT Governance Self-Assessment</h3><p>A resource in development for PoCT and governance leads.</p><span class="card-foot">View <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            <a class="card" href="../../resources/poct-governance-self-assessment/"><h3 style="font-size:1.3rem">PoCT Governance Self-Assessment</h3><p>A resource for PoCT and governance leads.</p><span class="card-foot">View <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
           </div>
         </div>
       </div>
@@ -118,7 +117,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="../../assets/img/mark-light.svg" alt="" width="64" height="41">
+        <img class="footer-logo" src="../../assets/img/logo-light.png" alt="The Governance Lab" width="1000" height="231">
         <p>Independent clinical governance, quality and patient safety consultancy for independent healthcare providers, with specialist point-of-care testing (PoCT) expertise. Led by Susana Rodrigues, Registered Nurse.</p>
       </div>
       <nav aria-label="Footer">
@@ -143,7 +142,8 @@
       </div>
       <div>
         <h2>Company</h2>
-        <p style="font-size:.95rem">The Governance Lab is the trading name of Clinical Quality &amp; PoCT Compliance Consultancy Ltd. Company number and registered office to be confirmed.</p>
+        <p style="font-size:.95rem">The Governance Lab - Clinical Quality &amp; PoCT Compliance Consultancy Ltd. Registered in England and Wales, company number 16867016.</p>
+        <p class="flag" style="font-size:.85rem">Registered office: the law requires its address here. Companies House lists your home address; please confirm whether to show it, or whether you will move your registered office.</p>
         <ul>
           <li><a href="../../privacy/">Privacy notice</a></li>
           <li><a href="../../terms/">Website terms</a></li>
@@ -151,7 +151,6 @@
       </div>
     </div>
     <p class="footer-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.3 4.6-4.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Please do not send patient-identifiable or confidential clinical information through this website or by email.</p>
-    <p class="footer-wordmark" aria-hidden="true">The Governance <i>Lab</i></p>
     <div class="footer-bottom">
       <span>&copy; <span data-year>2026</span> The Governance Lab</span>
       <span>Clinical governance &middot; Quality &middot; Patient safety &middot; PoCT</span>

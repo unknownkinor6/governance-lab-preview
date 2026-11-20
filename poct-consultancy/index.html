@@ -7,11 +7,11 @@
   <!-- Review draft: keep search engines out until Susana approves the site. Remove at launch. -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#1f3329">
-  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&amp;family=Mulish:ital,wght@0,400..800;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&amp;display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;display=swap&amp;text=The%20GovernancLabClinicQuty%26PoTCmps%2C">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+  <!-- Fonts are hosted on this site (assets/fonts), so no visitor data goes to Google. -->
+  <link rel="preload" href="../assets/fonts/Mulish-normal-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/Newsreader-normal-300-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
   <link rel="stylesheet" href="../assets/css/site.css">
   <script>document.documentElement.className += ' js';</script>
   <script src="../assets/js/site.js" defer></script>
@@ -31,8 +31,7 @@
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="brand" href="../" aria-label="The Governance Lab, home">
-      <img src="../assets/img/mark.svg" alt="" width="56" height="36">
-      <span class="brand-text"><span class="brand-name">The Governance Lab</span><span class="brand-sub">Clinical Quality &amp; PoCT Consultancy</span></span>
+      <img class="brand-logo" src="../assets/img/logo-dark.png" alt="" width="1000" height="231">
     </a>
     <nav class="main-nav" aria-label="Main">
       <ul>
@@ -71,7 +70,6 @@
 <main id="main">
   <section class="page-head bg-forest">
     <div class="grid-bg on-dark" aria-hidden="true"></div>
-    <img class="head-mark" src="../assets/img/mark-light.svg" alt="" width="340" height="220">
     <div class="container">
       <ol class="crumbs"><li><a href="../">Home</a></li><li aria-current="page">PoCT Consultancy</li></ol>
       <p class="eyebrow">Dedicated specialism</p>
@@ -118,6 +116,10 @@
         <div class="engage" data-reveal data-reveal-delay="80"><span class="mono">02</span><h3>PoCT gap analysis</h3><p>A broader review against agreed criteria.</p></div>
         <div class="engage" data-reveal data-reveal-delay="160"><span class="mono">03</span><h3>Implementation support</h3><p>Help addressing findings and strengthening the governance framework.</p></div>
       </div>
+      <div class="sa-link" data-reveal>
+        <h3><a href="../resources/poct-governance-self-assessment/">PoCT Governance <span class="nowrap">Self-Assessment</span> <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+        <p>Review how your organisation manages point-of-care testing (PoCT), identify gaps and build an action plan with clear priorities, owners and deadlines.</p>
+      </div>
     </div>
   </section>
 
@@ -126,7 +128,7 @@
       <div class="section-head" data-reveal>
         <p class="eyebrow">Illustrative PoCT review</p>
         <h2 id="ill-title">How a focused review <em class="accent">could work</em></h2>
-        <div class="fiction-label" style="max-width:760px"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 9v5M10 6v.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><strong>Illustrative example using fictional information.</strong> This is not a client case study and does not represent completed work or achieved outcomes.</span></div>
+        <div class="fiction-label" style="max-width:760px"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 9v5M10 6v.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><strong>Illustrative example using fictional information</strong></span></div>
       </div>
       <div class="narrative" data-reveal>
         <section>
@@ -170,10 +172,10 @@
 <!-- @doc-report-preview -->
 <article class="doc" aria-label="Sample PoCT governance findings report: one-page preview">
   <header class="doc-head">
-    <div class="doc-brand"><img src="../assets/img/mark.svg" alt="" width="46" height="30"><div><b>The Governance Lab</b><span>Clinical Governance, Quality &amp; PoCT Consultancy</span></div></div>
+    <div class="doc-brand"><img class="doc-logo" src="../assets/img/logo-dark.png" alt="The Governance Lab" width="1000" height="231"></div>
     <span class="doc-ref">Sample findings report<br>Preview page</span>
   </header>
-  <p class="doc-fiction">Illustrative example using fictional information. This is not a client case study and does not represent completed work or achieved outcomes.</p>
+  <p class="doc-fiction">Illustrative example using fictional information</p>
   <h3 class="doc-title">Sample PoCT governance findings report</h3>
   <p class="doc-sub">Fictional independent outpatient clinic &middot; Point-of-care blood glucose testing</p>
   <h4>Purpose and scope</h4>
@@ -192,7 +194,7 @@
       <dd>Reconcile active operators with competency and authorisation records. The responsible clinical lead should promptly determine any interim supervision or restrictions required. Introduce a controlled authorisation register and monitoring of locally defined review dates.</dd>
     </dl>
   </section>
-  <footer class="doc-foot"><span>Illustrative example using fictional information</span><span>The Governance Lab</span></footer>
+  <footer class="doc-foot"><span>The Governance Lab</span></footer>
 </article>
 <!-- /@doc-report-preview -->
           </div>
@@ -203,10 +205,10 @@
 <!-- @doc-plan-preview -->
 <article class="doc" aria-label="Sample PoCT improvement action plan: preview">
   <header class="doc-head">
-    <div class="doc-brand"><img src="../assets/img/mark.svg" alt="" width="46" height="30"><div><b>The Governance Lab</b><span>Clinical Governance, Quality &amp; PoCT Consultancy</span></div></div>
+    <div class="doc-brand"><img class="doc-logo" src="../assets/img/logo-dark.png" alt="The Governance Lab" width="1000" height="231"></div>
     <span class="doc-ref">Sample action plan<br>Preview page</span>
   </header>
-  <p class="doc-fiction">Illustrative example using fictional information. This is not a client case study and does not represent completed work or achieved outcomes.</p>
+  <p class="doc-fiction">Illustrative example using fictional information</p>
   <h3 class="doc-title">Sample PoCT improvement action plan</h3>
   <p class="doc-sub">How findings become actions, proposed responsibilities and completion evidence</p>
   <p class="callout">Day 0 is the date management receives and reviews the findings. All actions are Proposed. Owners and targets require agreement; they are illustrative planning targets, not regulatory deadlines. Prompt clinical assessment takes precedence where a safety concern is identified.</p>
@@ -230,7 +232,7 @@
     <div><b>Day 30</b>Review the first assurance report and overdue actions.</div>
     <div><b>Day 45</b>Assess whether subsequent records demonstrate effective implementation.</div>
   </div>
-  <footer class="doc-foot"><span>Illustrative example using fictional information</span><span>The Governance Lab</span></footer>
+  <footer class="doc-foot"><span>The Governance Lab</span></footer>
 </article>
 <!-- /@doc-plan-preview -->
           </div>
@@ -245,7 +247,6 @@
     <div class="container">
       <div class="cta-block" data-reveal>
         <div class="grid-bg" aria-hidden="true"></div>
-        <img class="cta-mark" src="../assets/img/mark.svg" alt="" width="520" height="336">
         <p class="eyebrow">Next step</p>
         <h2>Discuss your <em class="accent">PoCT governance needs</em></h2>
         <p>Whether it is one concern or a broader review, we can agree a scope that fits your service.</p>
@@ -263,7 +264,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="../assets/img/mark-light.svg" alt="" width="64" height="41">
+        <img class="footer-logo" src="../assets/img/logo-light.png" alt="The Governance Lab" width="1000" height="231">
         <p>Independent clinical governance, quality and patient safety consultancy for independent healthcare providers, with specialist point-of-care testing (PoCT) expertise. Led by Susana Rodrigues, Registered Nurse.</p>
       </div>
       <nav aria-label="Footer">
@@ -288,7 +289,8 @@
       </div>
       <div>
         <h2>Company</h2>
-        <p style="font-size:.95rem">The Governance Lab is the trading name of Clinical Quality &amp; PoCT Compliance Consultancy Ltd. Company number and registered office to be confirmed.</p>
+        <p style="font-size:.95rem">The Governance Lab - Clinical Quality &amp; PoCT Compliance Consultancy Ltd. Registered in England and Wales, company number 16867016.</p>
+        <p class="flag" style="font-size:.85rem">Registered office: the law requires its address here. Companies House lists your home address; please confirm whether to show it, or whether you will move your registered office.</p>
         <ul>
           <li><a href="../privacy/">Privacy notice</a></li>
           <li><a href="../terms/">Website terms</a></li>
@@ -296,7 +298,6 @@
       </div>
     </div>
     <p class="footer-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.3 4.6-4.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Please do not send patient-identifiable or confidential clinical information through this website or by email.</p>
-    <p class="footer-wordmark" aria-hidden="true">The Governance <i>Lab</i></p>
     <div class="footer-bottom">
       <span>&copy; <span data-year>2026</span> The Governance Lab</span>
       <span>Clinical governance &middot; Quality &middot; Patient safety &middot; PoCT</span>

@@ -1,7 +1,7 @@
 # The Governance Lab website: design note
 
 Client: Susana Rodrigues, Registered Nurse, founder of The Governance Lab
-(Clinical Quality & PoCT Compliance Consultancy Ltd). Built by Sisco Solutions.
+(registered as The Governance Lab - Clinical Quality & PoCT Compliance Consultancy Ltd, company 16867016). Built by Sisco Solutions.
 Source: her email of 9 Nov 2026 with `The_Governance_Lab_Website_Brief.docx` and
 `The_Governance_Lab_Fictional_PoCT_Website_Examples.docx`, plus her LinkedIn profile.
 
